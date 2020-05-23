@@ -4,9 +4,14 @@
 ## Descripción del proyecto final.
 
 En éste proyecto final, utilizando la herramienta desarrollo web del lado del servidor por medio del lenguaje Javascript(Nodejs),
-el framework de ésta misma herramienta (Express), el servicio de hosting de base de datos en la nube de nuve (freemysqlhosting) y con el 
+el framework de ésta misma herramienta (Express), el servicio de hosting de base de datos en la nube de nuve y con el 
 servicio de despliegue gratuito de paginas web(zeit now).Se creo y desarrollo una web-app en base al conocimiento adquirido en las prácticas anteriores que se han entregado a lor largo de éste periodo, una webapp de manejo y visualización de videos, ingrensados por el usuario. Con el fin de ser una webapp, donde cualquiera pueda guardar y mostrar sus videos favoritos.
 
+# Express 
+Express es un framework de NodeJS que nos ayuda simplificar la programación del lado del servidor con muchas menos líneas de código.
+
+# Herramientas necesarias
+Visual Studio Code, Node JS, Express, Bootstrap, Zeit Now, Remote MYSQL
 ***
 
 ## Caracteriscas del proyecto final.

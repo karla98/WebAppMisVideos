@@ -1,0 +1,52 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="/">                      <h2 class="logotipo">VideosFav</h2>
+</a><button
+      class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i
+        class="fas fa-bars ml-1"></i></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ml-auto">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/users"> <i class="fas fa-users"></i>  Users</a></li>
+
+
+        <ul class="navbar-nav ml-auto ml-md-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"> <i class="fas fa-search"></i></a>
+            <div id="mydiv" class="dropdown-menu dropdown-menu-right">
+                  <form action="/results" method="POST">
+                  <input id="formulario" type="text" name="name" class="form-control my-2" autocomplete="off" spellcheck="false" placeholder="Busca un video..." />
+                  <button type="submit"  style="display: none;" id="buscar"> </button>
+                  </form>
+              </div>
+          </li>
+          {{#if user}}
+          <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="/profile">Profile</a><a class="dropdown-item" href="/videos">Mis
+                  Videos</a>
+                <a class="dropdown-item" href="/videos/add">Add Video</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout">Logout</a>
+              </div>
+            </li>
+
+            {{else}}
+
+
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/signin">SignIn</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/signup">SignUp</a></li>
+
+
+            {{/if}}
+          </ul>
+    </div>
+  </div>
+</nav>

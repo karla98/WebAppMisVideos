@@ -1,0 +1,32 @@
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-heading text-uppercase">Users</div>
+  </div>
+</header>
+
+<section class="page-section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">People</h2>
+      <hr color="gray" size=3 width="150">
+    </div> <br><br>
+
+    <div class="row">
+      {{#each data}}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class=" container"><i class="fas fa-user fa-5x" ></i> </div>
+        <div class="portfolio-item">
+          <a href="/user_videos/{{id}}">
+            <h4 class="card-title">
+              {{username}}
+            </h4>
+          </a>
+        </div>
+      </div>
+
+      {{/each}}
+    </div>
+  </div>
+
+</section>

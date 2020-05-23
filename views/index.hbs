@@ -1,0 +1,249 @@
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+                <div class="masthead-heading text-uppercase">Videos Favoritos</div>
+                <div class="indicadores"></div>
+            </div>
+        <div class="text-center">
+
+            <a href="/#team">ABOUT US</a></div>
+            
+</header>
+
+<section class="page-section bg-light">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">WATCH VIDEOS ONLINE</h2>
+            <hr color="gray" size=3 width="150">
+        </div>
+        <div class="container text-center my-auto">
+            <div class="lineas">
+                <button id="youtube" class="btn btn-danger" onclick="searchY()">YOUTUBE</button>
+            </div>
+            <div class="lineas">
+                <button id="vimeo" class="btn btn-danger"  onclick="searchV()">VIMEO</button>
+            </div>
+            <div class="lineas">
+                <button id="metacafe" class="btn btn-danger"  onclick="searchM()">METACAFE</button>
+            </div>
+            <div id="dailymotion"  class="lineas">
+                <button class="btn btn-danger"  onclick="searchD()">DAILY MOTION</button>
+            </div>
+        </div>
+
+        <br> <br>
+        <div id="datos" class="row">
+            {{#each data}}
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="portfolio-item">
+                    <a class="portfolio-link" href="/detail/{{id}}">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"></div>
+                        </div>
+                        <input value="{{id}}" class="video">
+
+                        <iframe class="img-fluid" width="397" height="260" src="{{url}}" frameborder="0"
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <div class="portfolio-caption">
+                                    <div class="container text-center my-auto">
+
+                            <h3 id="titulos" class="card-title text-uppercase">
+                                {{name}}
+                            </h3>
+                    </a>
+                    <h4 class="card-title text-uppercase">
+                        {{red_name}}
+                    </h4>
+                    <p class="card-title text-uppercase">
+                        {{category}}
+                    </p>
+                    <a style="color: crimson; text-decoration: none;" href="/user_videos/{{user_id}}">
+
+                        <p>{{username}}</p>
+
+                    </a>
+                    <!-- CALIFICACION PROMEDIADA DE TODOS LOS USERS AQUÍ  -->
+                    <input value="{{voto}}" class="votos">
+
+                    <p>
+                        <label id="r1{{id}}">★</label>
+                        <label id="r2{{id}}">★</label>
+                        <label id="r3{{id}}">★</label>
+                        <label id="r4{{id}}">★</label>
+                        <label id="r5{{id}}">★</label>
+                        <label>{{voto}}/5 </label>
+
+                    </p><br>
+
+                    <!---***********************************************************-->
+                </div>
+                                </div>
+
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+    </div>
+</section>
+
+<!-- Team-->
+<section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nuestro Equipo</h2>
+            <h3 class="section-subheading text-muted">Programación Web.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <div class=" container"><i class="fas fa-user fa-7x" ></i> </div>
+                    <h4>Karla Rios</h4>
+                    <p class="text-muted">Estudiante de Ingeniería</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100007216395469"><i class="fab fa-facebook-f"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <div class=" container"><i class="fas fa-user fa-7x" ></i> </div>
+                    <h4>Daniel Sandoval</h4>
+                    <p class="text-muted">Estudiante de Ingeniería</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100000893966977"><i class="fab fa-facebook-f"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <div class=" container"><i class="fas fa-user fa-7x" ></i> </div>
+                    <h4> Arturo García</h4>
+                    <p class="text-muted">Estudiante de Ingeniería</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/arturo.gacia.184"><i class="fab fa-facebook-f"></i></a><a
+                        class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="large text-muted">Ingeniería en Tecnologías de la Información y Comunicaciones - Tecnológico Nacional de México Campus León</p>
+            </div>
+        </div>
+    </div>
+</section>
+     {{>footer}} 
+
+<!-- *********** ESTILOS CALIFICACIÓN ********* -->
+<script type="text/javascript">
+
+    function calificarIndex() {
+        var videos = document.getElementsByClassName("video");
+        var votos = document.getElementsByClassName("votos");
+        var prom = 0;
+        for (var i = 0; i < videos.length; i++) {
+            var ident = videos[i].value;
+            var radio1 = document.getElementById("r1" + ident);
+            var radio2 = document.getElementById("r2" + ident);
+            var radio3 = document.getElementById("r3" + ident);
+            var radio4 = document.getElementById("r4" + ident);
+            var radio5 = document.getElementById("r5" + ident);
+
+            prom = votos[i].value;
+            for (var j = 0; j <= prom; j++) {
+                console.log(prom);
+                switch (j) {
+                    case 1:
+                        radio1.style = "color: orange";
+                        break;
+                    case 2:
+                        radio2.style = "color: orange";
+                        break;
+                    case 3:
+                        radio3.style = "color: orange";
+                        break;
+                    case 4:
+                        radio4.style = "color: orange";
+                        break;
+                    case 5:
+                        radio5.style = "color: orange";
+                        break;
+                    default:
+                        console.log("no funciona");
+                }
+            }
+        }
+    };
+    window.onload = calificarIndex;
+
+</script>
+
+<!-- ***************   BÚSQUEDA  ********************* -->
+<script type="text/javascript">
+        youtube = document.getElementById("youtube");
+        metacafe = document.getElementById("metacafe");
+        vimeo = document.getElementById("vimeo");
+        daily = document.getElementById("dailymotion");
+
+    function searchY() {
+        var  filter, ul, li, a, i;
+        filter = "YOUTUBE";
+        ul = document.getElementById("datos");
+        li = ul.getElementsByClassName("col-lg-4 col-sm-6 mb-4");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "block";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    };
+    function searchM() {
+        var  filter, ul, li, a, i;
+        filter = "METACAFE";
+        ul = document.getElementById("datos");
+        li = ul.getElementsByClassName("col-lg-4 col-sm-6 mb-4");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "block";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    };
+    function searchV() {
+        var  filter, ul, li, a, i;
+        filter = "VIMEO";
+        ul = document.getElementById("datos");
+        li = ul.getElementsByClassName("col-lg-4 col-sm-6 mb-4");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "block";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    };
+
+       function searchD() {
+        var  filter, ul, li, a, i;
+        filter = "DAILYMOTION";
+        ul = document.getElementById("datos");
+        li = ul.getElementsByClassName("col-lg-4 col-sm-6 mb-4");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "block";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    };
+
+</script>

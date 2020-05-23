@@ -1,0 +1,245 @@
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">FACTS & INFO</div>
+    <div class="masthead-heading text-uppercase">VIDEOS DETAILS</div>
+
+</header>
+<!--AQUÍ SE VAN A MOSTRAR LOS DETALLES DE LOS VIDEOS DE LOS USERS SIN NECESIDAD DE LOGUEARSE-->
+
+<section class="page-section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase"> {{data.name}}</h2>
+      <hr color="gray" size=3 width="150">
+    </div>
+    <br> <br>
+    <div class="container text-center my-auto">
+
+      <div class="container text-center my-auto">
+
+        <iframe width="647" height="410" src="{{data.url}}" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h4 class="card-title text-uppercase">
+        Categoría: {{data.category}}
+      </h4>
+
+      <h4 class="card-title text-uppercase">
+        RED SOCIAL: {{data.red_name}}
+      </h4>
+
+      <!--AQUÍ EL USERNAME VA A SER UNA ETIQUETA a PARA IR A LOS VIDEOS PUBLICADOS POR ESE MISMO USER -->
+      Subido por:
+      <a style="color: crimson; text-decoration: none;" href="/user_videos/{{data.id}}">
+        <h4 style="color: crimson; text-decoration: none;" class="card-title">
+          {{data.username}}
+        </h4>
+      </a>
+
+
+      <p class="m-2">{{data.description}}</p>
+
+      {{#if user}}
+
+      <form action="/detail/{{data.video_id}}" method="POST">
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="votos" value="5">
+          <!--
+    --><label for="radio1">★</label>
+          <!--
+    --><input id="radio2" type="radio" name="votos" value="4">
+          <!--
+    --><label for="radio2">★</label>
+          <!--
+    --><input id="radio3" type="radio" name="votos" value="3">
+          <!--
+    --><label for="radio3">★</label>
+          <!--
+    --><input id="radio4" type="radio" name="votos" value="2">
+          <!--
+    --><label for="radio4">★</label>
+          <!--
+    --><input id="radio5" type="radio" name="votos" value="1">
+          <!--
+    --><label for="radio5">★</label>
+        </p>
+        <button id="votarButton" type="submit" onclick="" class="btn btn-primary">
+          Votar
+        </button>
+
+      </form>
+
+
+      {{/if}}
+
+      {{#each prom}}
+      <!-- CALIFICACION PROMEDIADA DE TODOS LOS USERS AQUÍ  -->
+      <div id="prom">
+        <input id="votos" value="{{prom}}">
+        <p>Ranking</p>
+        <p>
+          <label id="r1">★</label>
+          <label id="r2">★</label>
+          <label id="r3">★</label>
+          <label id="r4">★</label>
+          <label id="r5">★</label>
+          <label>{{prom}}/5 </label>
+
+        </p>
+      </div>
+      <br>
+
+      <!---***********************************************************-->
+      {{/each}}
+    </div>
+
+  </div>
+</section>
+
+
+<section class="page-section bg-light">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase"> VIDEOS RECOMENDADOS</h2>
+      <hr color="gray" size=3 width="150">
+    </div>
+
+<div class="peliculas-recomendadas contenedor">
+    <div class="contenedor-titulo-controles">
+        <div class="indicadores"></div>
+    </div>
+
+    <div class="contenedor-principal">
+        <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
+        <div class="contenedor-carousel">
+            <div class="carousel">
+                {{#each fav}}
+                <a style="text-decoration: none;" href="/detail/{{id}}">
+                    <input value="{{id}}" class="videos">
+
+
+                    <div class="pelicula">
+
+                        <iframe width="347" height="210" src="{{url}}" frameborder="0"
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <p>ir al video</p>
+                    </div>
+                </a>
+
+                {{/each}}
+            </div>
+
+            <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </div>
+</section>
+
+     {{>footer}} 
+
+
+
+<!-- *********** ESTILOS CALIFICACIÓN ********* -->
+<script type="text/javascript">
+  var votos = document.getElementById("votos");
+  function calificar() {
+    console.log(votos.value);
+    var radio1 = document.getElementById("r1");
+    var radio2 = document.getElementById("r2");
+    var radio3 = document.getElementById("r3");
+    var radio4 = document.getElementById("r4");
+    var radio5 = document.getElementById("r5");
+    console.log(votos.value);
+    for (var i = 0; i <= votos.value; i++) {
+      switch (i) {
+        case 1:
+          radio1.style = "color: orange";
+          break;
+        case 2:
+          radio2.style = "color: orange";
+          break;
+        case 3:
+          radio3.style = "color: orange";
+          break;
+        case 4:
+          radio4.style = "color: orange";
+          break;
+        case 5:
+          radio5.style = "color: orange";
+          break;
+        default:
+          console.log("no funciona");
+      }
+    }
+  };
+
+  window.onload = calificar;
+
+
+
+
+</script>
+<!-- ************************************ -->
+
+<!-- ***************   CARRUSEL  ********************* -->
+
+<script type="text/javascript">
+    const fila = document.querySelector('.contenedor-carousel');
+    const peliculas = document.querySelectorAll('.pelicula');
+
+    const flechaIzquierda = document.getElementById('flecha-izquierda');
+    const flechaDerecha = document.getElementById('flecha-derecha');
+
+    flechaDerecha.addEventListener('click', () => {
+        fila.scrollLeft += fila.offsetWidth;
+
+        const indicadorActivo = document.querySelector('.indicadores .activo');
+        if (indicadorActivo.nextSibling) {
+            indicadorActivo.nextSibling.classList.add('activo');
+            indicadorActivo.classList.remove('activo');
+        }
+    });
+
+    flechaIzquierda.addEventListener('click', () => {
+        fila.scrollLeft -= fila.offsetWidth;
+
+        const indicadorActivo = document.querySelector('.indicadores .activo');
+        if (indicadorActivo.previousSibling) {
+            indicadorActivo.previousSibling.classList.add('activo');
+            indicadorActivo.classList.remove('activo');
+        }
+    });
+
+    const numeroPaginas = Math.ceil(peliculas.length / 5);
+    for (let i = 0; i < numeroPaginas; i++) {
+        const indicador = document.createElement('button');
+
+        if (i === 0) {
+            indicador.classList.add('activo');
+        }
+
+        document.querySelector('.indicadores').appendChild(indicador);
+        indicador.addEventListener('click', (e) => {
+            fila.scrollLeft = i * fila.offsetWidth;
+
+            document.querySelector('.indicadores .activo').classList.remove('activo');
+            e.target.classList.add('activo');
+        });
+    }
+
+    peliculas.forEach((pelicula) => {
+        pelicula.addEventListener('mouseenter', (e) => {
+            const elemento = e.currentTarget;
+            setTimeout(() => {
+                peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+                elemento.classList.add('hover');
+            }, 300);
+        });
+    });
+
+    fila.addEventListener('mouseleave', () => {
+        peliculas.forEach(pelicula => pelicula.classList.remove('hover'));
+    });
+</script>

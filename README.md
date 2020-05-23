@@ -3,7 +3,7 @@
 ***
 ## Descripción del proyecto final.
 
-Web app con nodejs, y javascript como lenguaje de programación backend y mysql como base de datos SQL. Puede crear, eliminar, actualizar, y listar los datos (videos). Esta aplicación de NodeJS hace uso del motor de plantillas Handlebars, Bootstrap y librerías de express para conexión a mysql, en este proyecto se plantea la creación de un sitio con una navegación dinamica. Consta de páginas diseñadas con Bootstrap y funcionalidad de NodeJS con express, la estructura del proyecto separa las rutas de los partials(trozos de código que se pueden usar en cualquier parte del proyecto) y el funcionamiento (controllers).
+Web app con nodejs, y javascript como lenguaje de programación backend y mysql como base de datos SQL. Puede crear, eliminar, actualizar, y listar los datos (videos). Esta aplicación de NodeJS hace uso del motor de plantillas Handlebars, Bootstrap y librerías de express para conexión a mysql y para el acceso por login, en este proyecto se plantea la creación de un sitio con una navegación dinamica. Consta de páginas diseñadas con Bootstrap y funcionalidad de NodeJS con express, la estructura del proyecto separa las rutas de los partials(trozos de código que se pueden usar en cualquier parte del proyecto) y el funcionamiento (controllers).
 
 La app muestra los vídeos favoritos en home ordenandolos por fecha de captura mas reciente,además tiene un filtro para categorizar los vídeos por red social. 
 

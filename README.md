@@ -3,9 +3,9 @@
 ***
 ## Descripción del proyecto final.
 
-En éste proyecto final, utilizando la herramienta desarrollo web del lado del servidor por medio del lenguaje Javascript(Nodejs),
-el framework de ésta misma herramienta (Express), el servicio de hosting de base de datos en la nube de nuve y con el 
-servicio de despliegue gratuito de paginas web(zeit now).Se creo y desarrollo una web-app en base al conocimiento adquirido en las prácticas anteriores que se han entregado a lor largo de éste periodo, una webapp de manejo y visualización de videos, ingrensados por el usuario. Con el fin de ser una webapp, donde cualquiera pueda guardar y mostrar sus videos favoritos.
+Web app con nodejs, y javascript como lenguaje de programación backend y mysql como base de datos SQL. Puede crear, eliminar, actualizar, y listar los datos (videos). Esta aplicación de NodeJS hace uso del motor de plantillas Handlebars, Bootstrap y librerías de express para conexión a mysql, en este proyecto se plantea la creación de un sitio con una navegación dinamica. Consta de páginas diseñadas con Bootstrap y funcionalidad de NodeJS con express, la estructura del proyecto separa las rutas de los partials(trozos de código que se pueden usar en cualquier parte del proyecto) y el funcionamiento (controllers).
+
+La app muestra los vídeos favoritos en home ordenandolos por fecha de captura mas reciente,además tiene un filtro para categorizar los vídeos por red social. 
 
 # Express 
 Express es un framework de NodeJS que nos ayuda simplificar la programación del lado del servidor con muchas menos líneas de código.

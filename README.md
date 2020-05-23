@@ -28,8 +28,7 @@ Visual Studio Code, Node JS, Express, Bootstrap, Zeit Now, Remote MYSQL
 
 ### Pagina principal.
 
-En la pagina principal se mostrará los videos que han sido agregados por los usuario y que aparte sean calificado. También se mostrará
-un carrusel que una lista de videos recomendados.
+En la pagina principal se mostrará los videos que han sido agregados por los usuarios con su respectiva calificación promediada. 
 Cada video que se mostrará contendrá los siguentes elementos:
 
 * El nombre del video.
@@ -40,9 +39,10 @@ Cada video que se mostrará contendrá los siguentes elementos:
 Para poder calificar un video primero se necesita esta logeado dentro de la WebApp, ya habiendo cumplido éste primer requisito, deberas
 dar clic sobre el video de tú elección que quieras calificar. Una vez hecho esto se te mostrará el sistema de calificiación de la WebApp, 
 y ahí solo tendras que seleccionar la cantidad de estrellas para el video que se va a calificar y para agregar la calificación solo hace
-falta dar clic sobre el botón *votar*.
+falta dar clic sobre el botón *votar*. Además en el detalle de  cada video hay un listado de videos sugeridos.
 
-Y por ultimo, también se mostraran los siguientes botones: *users*, *SingIn* y *SingUp* (que acontinuación explicaremos).
+### FILTROS DE BÚSQUEDA
+En la webapp hay dos formas de hacer filtrado en la búsqueda, uno en la home seleccionando por red social a la que pertenecen y otra desde navigation en el ícono de search donde se busca por nombre de video, esta última opción lleva a la página results donde se muestran los resultados y además hay la opción de hacer esta misma búsqueda desde esta misma página.
 
 ### Users.
 
@@ -68,7 +68,6 @@ previamente creado por ti. Para eso deberás llenar los siguientes campos para p
 
 Un vez llenado correctamente los campos, lo siguiente sera dar clic en el botón *SingIn* que se encuentra en la parte inferior de los campos. Y con ésto se concretaría tu acceso a tu usuario dentro de la WebApp.
 
-
 ### Home
 
 ```
@@ -77,6 +76,8 @@ Un vez llenado correctamente los campos, lo siguiente sera dar clic en el botón
 
 En dicha opción (que se meustra una vez logueado en la WebApp), te redirecciona a la pagina principal, para poder visualizar los videos
 y poder calificarlos.
+
+### OPCIONES DEL USUARIO LOGUEADO
 
 ### All Videos
 

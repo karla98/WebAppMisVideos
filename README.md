@@ -1,5 +1,10 @@
 # Proyecto Final WebApp mis videos
 
+## Desarrolladores:
+* Rios Díaz Karla Mariela 
+* García Aguilera Arturo 
+* Sandoval Rios José Daniel 
+
 ***
 ## Descripción del proyecto final.
 
@@ -23,6 +28,8 @@ Visual Studio Code, Node JS, Express, Bootstrap, Zeit Now, Remote MYSQL
 * Tener una API Rest que te permitirá acceder a los datos desde cualquier aplicación del listado de los vídeos, mostrar los vídeos con fecha de captura mas reciente y una cadena JSON generada debe 100% valida.
 
 ***
+## API REST
+La API REST implementada en el proyecto permite acceder a los datos desde cualquier aplicación del listado de los vídeos mediante rutas /api que devuelven un objeto JSON del listado de videos ordenados con fecha de captura mas reciente.
 
 ## Uso de la WebApp.
 

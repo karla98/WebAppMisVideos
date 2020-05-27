@@ -13,7 +13,7 @@ module.exports = {
 };
 */
 
-
+//Datos para conexión para la base de datos.
 module.exports = {
 
     database: {

@@ -1,12 +1,21 @@
 const express = require('express');
+
 const morgan = require('morgan');
+
 const path = require('path');
+
 const exphbs = require('express-handlebars');
+
 const session = require('express-session');
+
 const validator = require('express-validator');
+
 const passport = require('passport');
+
 const flash = require('connect-flash');
+
 const MySQLStore = require('express-mysql-session')(session);
+
 const bodyParser = require('body-parser');
 
 const { database } = require('./keys');
@@ -62,7 +71,7 @@ app.use(require('./routes/authentication'));
 app.use(require('./routes/user_videos'));
 
 
-//app.use('/videos', require('./routes/videos'));
+
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
